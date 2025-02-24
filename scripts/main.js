@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = new Navbar();
     const feed = new SocialFeed();
     const theme = new ThemeManager();
-
+    if (window.location.pathname.includes('explore')){
+        const explorePage = new ExplorePage();
+    }
     // Example of adding a mock post
     window.addMockPost = () => {
         feed.createPost({

@@ -1,0 +1,51 @@
+
+{
+    "hobbies": [
+      {
+        "id": 1,
+        "name": "Boxing",
+        "category": "Sports",
+        "description": "Learn the art of boxing, improve fitness and self-defense",
+        "image": "boxing.jpg",
+        "followers": 2500,
+        "trending": true
+      },
+      {
+        "id": 2,
+        "name": "Music Production",
+        "category": "Music",
+        "description": "Create and produce your own music tracks",
+        "image": "music.jpg",
+        "followers": 3200,
+        "trending": true
+      },
+      {
+        "id": 3,
+        "name": "Digital Art",
+        "category": "Art",
+        "description": "Express creativity through digital medium",
+        "image": "digital-art.jpg",
+        "followers": 1800,
+        "trending": false
+      },
+      {
+        "id": 4,
+        "name": "Gaming Streams",
+        "category": "Gaming",
+        "description": "Join gaming communities and share experiences",
+        "image": "gaming.jpg",
+        "followers": 2100,
+        "trending": true
+      },
+      {
+        "id": 5,
+        "name": "Culinary Arts",
+        "category": "Cooking",
+        "description": "Explore different cuisines and cooking techniques",
+        "image": "cooking.jpg",
+        "followers": 2800,
+        "trending": true
+      }
+    ]
+  }
+  

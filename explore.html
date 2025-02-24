@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HobbyHive - Explore</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/explore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/" class="logo">HobbyHive</a>
+        </div>
+        <div class="nav-menu">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="/explore" class="active"><i class="fas fa-compass"></i>Explore</a></li>
+            </ul>
+            <div class="nav-profile">
+                <img src="default-avatar.jpg" alt="Profile" class="profile-img">
+                <button class="nav-toggle">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="explore-content">
+        <div class="categories-section">
+            <h2>Popular Categories</h2>
+            <div class="category-chips">
+                <button class="category-chip active">All</button>
+                <button class="category-chip">Music</button>
+                <button class="category-chip">Sports</button>
+                <button class="category-chip">Art</button>
+                <button class="category-chip">Gaming</button>
+                <button class="category-chip">Cooking</button>
+                <button class="category-chip">Photography</button>
+                <button class="category-chip">DIY</button>
+            </div>
+        </div>
+
+        <div class="hobby-grid">
+            <!-- Dynamic hobby cards will be inserted here -->
+        </div>
+
+        <div class="trending-users">
+            <h2>Trending Hobbyists</h2>
+            <div class="users-container">
+                <!-- Dynamic user cards will be inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/explore.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

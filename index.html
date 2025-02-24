@@ -22,9 +22,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-compass"></i> Explore</a></li>
-                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="explore.html"><i class="fas fa-compass"></i> Explore</a></li>
             </ul>
             <div class="nav-profile">
                 <img src="default-avatar.jpg" alt="Profile" class="profile-img">
@@ -33,11 +31,6 @@
                 </button>
             </div>
         </div>
-        <div class="nav-theme-toggle">
-            <button id="theme-toggle" class="theme-toggle-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div> 
     </nav>
 
     <!-- Main Content -->
@@ -66,8 +59,27 @@
         </div>
     </main>
 
+    <script>
+        // Check storage availability
+        function isStorageAvailable() {
+            try {
+                const test = '__storage_test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch(e) {
+                return false;
+            }
+        }
+    
+        // Show warning if storage is not available
+        if (!isStorageAvailable()) {
+            console.warn('Local storage is not available. Posts will not persist.');
+        }
+    </script>    
     <script src="scripts/navbar.js"></script>
     <script src="scripts/feed.js"></script>
     <script src="scripts/main.js"></script>
+
 </body>
 </html>

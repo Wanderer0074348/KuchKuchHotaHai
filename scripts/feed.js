@@ -1,7 +1,26 @@
 class SocialFeed {
     constructor() {
-        this.posts = [];
+        this.posts = this.loadPostsFromStorage() || [];
         this.initialize();
+    }
+
+    loadPostsFromStorage() {
+        try {
+            const savedPosts = localStorage.getItem('hobbyHivePosts');
+            return savedPosts ? JSON.parse(savedPosts) : [];
+        } catch (error) {
+            console.error('Error loading posts:', error);
+            return [];
+        }
+    }
+
+    savePostsToStorage() {
+        try {
+            localStorage.setItem('hobbyHivePosts', JSON.stringify(this.posts));
+        } catch (error) {
+            console.error('Error saving posts:', error);
+            this.cleanupOldPosts(); // Try to free up space
+        }
     }
 
     initialize() {
@@ -11,6 +30,53 @@ class SocialFeed {
         
         this.postButton.addEventListener('click', () => this.createPost());
         this.setupImageUpload();
+        this.renderAllPosts();
+    }
+
+    renderAllPosts() {
+        this.feedContainer.innerHTML = '';
+        this.posts.forEach(post => this.renderPost(post));
+    }
+
+    createPost() {
+        const content = this.postInput.value.trim();
+        if (!content && !this.currentImage) return;
+
+        const post = {
+            id: Date.now(),
+            content,
+            image: this.currentImage,
+            timestamp: new Date(),
+            likes: 0,
+            comments: [],
+            user: {
+                name: 'Current User',
+                avatar: 'default-avatar.jpg'
+            }
+        };
+
+        this.posts.unshift(post);
+        this.savePostsToStorage();
+        this.renderPost(post);
+        this.resetPostInput();
+    }
+
+    setupPostInteractions(postElement, post) {
+        const likeButton = postElement.querySelector('.like-button');
+        likeButton.addEventListener('click', () => {
+            post.likes++;
+            likeButton.querySelector('span').textContent = post.likes;
+            likeButton.querySelector('i').classList.replace('far', 'fas');
+            this.savePostsToStorage();
+        });
+    }
+
+    cleanupOldPosts() {
+        const maxPosts = 50; // Keep only the latest 50 posts
+        if (this.posts.length > maxPosts) {
+            this.posts = this.posts.slice(0, maxPosts);
+            this.savePostsToStorage();
+        }
     }
 
     setupImageUpload() {
@@ -32,10 +98,23 @@ class SocialFeed {
             const reader = new FileReader();
             reader.onload = (e) => {
                 this.currentImage = e.target.result;
+                // Display a small preview of the image
+                const previewContainer = document.querySelector('.image-preview');
+                if (!previewContainer) {
+                    const newPreview = document.createElement('div');
+                    newPreview.className = 'image-preview';
+                    newPreview.innerHTML = `<img src="${e.target.result}" alt="Image Preview" style="max-width: 100px; max-height: 100px;" />`;
+                    this.postInput.parentElement.appendChild(newPreview);
+                } else {
+                    previewContainer.innerHTML = `<img src="${e.target.result}" alt="Image Preview" style="max-width: 100px; max-height: 100px;" />`;
+                }
             };
             reader.readAsDataURL(file);
+            // Reset the file input value to prevent duplicate selection
+            event.target.value = null;
         }
     }
+    
 
     createPost() {
         const content = this.postInput.value.trim();

@@ -143,3 +143,16 @@ body {
 .action-button:hover {
     color: var(--primary-color);
 }
+
+.image-preview {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-preview img {
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}

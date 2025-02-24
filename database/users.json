@@ -1,0 +1,46 @@
+
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Mike Zhang",
+        "hobby": "Boxing & Music Production",
+        "followers": 2800,
+        "avatar": "mike.jpg",
+        "description": "Amateur boxer and beats producer 🥊 🎵"
+      },
+      {
+        "id": 2,
+        "name": "Sarah Chen",
+        "hobby": "Digital Art",
+        "followers": 1950,
+        "avatar": "sarah.jpg",
+        "description": "Creating digital masterpieces 🎨"
+      },
+      {
+        "id": 3,
+        "name": "James Wilson",
+        "hobby": "Photography & Gaming",
+        "followers": 1650,
+        "avatar": "james.jpg",
+        "description": "Capturing moments & streaming games 📸 🎮"
+      },
+      {
+        "id": 4,
+        "name": "Aisha Patel",
+        "hobby": "Cooking",
+        "followers": 3200,
+        "avatar": "aisha.jpg",
+        "description": "Fusion cuisine explorer 👩‍🍳"
+      },
+      {
+        "id": 5,
+        "name": "Carlos Rodriguez",
+        "hobby": "Music & Sports",
+        "followers": 2100,
+        "avatar": "carlos.jpg",
+        "description": "Guitar player and fitness enthusiast 🎸 💪"
+      }
+    ]
+  }
+  

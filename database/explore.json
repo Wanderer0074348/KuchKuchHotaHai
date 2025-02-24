@@ -1,0 +1,176 @@
+{
+    "categories": [
+      "All",
+      "Music",
+      "Sports",
+      "Art",
+      "Gaming",
+      "Cooking",
+      "Photography",
+      "DIY",
+      "Technology"
+    ],
+    "hobbies": [
+      {
+        "id": 1,
+        "name": "Boxing",
+        "category": "Sports",
+        "description": "Learn the art of boxing, improve fitness and self-defense",
+        "image": "database/images/musician.jpg",
+        "followers": 2500,
+        "trending": true,
+        "tags": ["fitness", "combat sports", "self-defense"],
+        "difficulty": "Intermediate"
+      },
+      {
+        "id": 2,
+        "name": "Music Production",
+        "category": "Music",
+        "description": "Create and produce your own music tracks",
+        "image": "database/images/musician.jpg",
+        "followers": 3200,
+        "trending": true,
+        "tags": ["audio", "creativity", "digital"],
+        "difficulty": "Advanced"
+      },
+      {
+        "id": 3,
+        "name": "Digital Art",
+        "category": "Art",
+        "description": "Express creativity through digital medium",
+        "image": "database/images/musician.jpg",
+        "followers": 1800,
+        "trending": false,
+        "tags": ["creative", "digital", "illustration"],
+        "difficulty": "Intermediate"
+      },
+      {
+        "id": 4,
+        "name": "Gaming Streams",
+        "category": "Gaming",
+        "description": "Join gaming communities and share experiences",
+        "image": "database/images/musician.jpg",
+        "followers": 2100,
+        "trending": true,
+        "tags": ["streaming", "esports", "entertainment"],
+        "difficulty": "Beginner"
+      },
+      {
+        "id": 5,
+        "name": "Culinary Arts",
+        "category": "Cooking",
+        "description": "Explore different cuisines and cooking techniques",
+        "image": "database/images/musician.jpg",
+        "followers": 2800,
+        "trending": true,
+        "tags": ["food", "cuisine", "kitchen"],
+        "difficulty": "Intermediate"
+      },
+      {
+        "id": 6,
+        "name": "Street Photography",
+        "category": "Photography",
+        "description": "Capture urban life and street moments",
+        "image": "database/images/musician.jpg",
+        "followers": 1500,
+        "trending": false,
+        "tags": ["urban", "candid", "photo"],
+        "difficulty": "Beginner"
+      },
+      {
+        "id": 7,
+        "name": "DIY Electronics",
+        "category": "DIY",
+        "description": "Build your own electronic projects and gadgets",
+        "image": "database/images/musician.jpg",
+        "followers": 1900,
+        "trending": true,
+        "tags": ["electronics", "making", "technology"],
+        "difficulty": "Advanced"
+      },
+      {
+        "id": 8,
+        "name": "Artificial Intelligence",
+        "category": "Technology",
+        "description": "Build your own AI projects and robots",
+        "image": "database/images/musician.jpg",
+        "followers": 1900,
+        "trending": true,
+        "tags": ["technology"],
+        "difficulty": "Advanced" 
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Mike Zhang",
+        "hobby": "Boxing & Music Production",
+        "followers": 2800,
+        "avatar": "database/images/musician.jpg",
+        "description": "Amateur boxer and beats producer 🥊 🎵",
+        "location": "New York, USA",
+        "joinedDate": "2024-01-15",
+        "socialLinks": {
+          "instagram": "@mikezhang",
+          "youtube": "MikeZMusic"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Sarah Chen",
+        "hobby": "Digital Art",
+        "followers": 1950,
+        "avatar": "database/images/musician.jpg",
+        "description": "Creating digital masterpieces 🎨",
+        "location": "Toronto, Canada",
+        "joinedDate": "2024-02-01",
+        "socialLinks": {
+          "instagram": "@sarahchenart",
+          "behance": "sarahchen"
+        }
+      },
+      {
+        "id": 3,
+        "name": "James Wilson",
+        "hobby": "Photography & Gaming",
+        "followers": 1650,
+        "avatar": "database/images/musician.jpg",
+        "description": "Capturing moments & streaming games 📸 🎮",
+        "location": "London, UK",
+        "joinedDate": "2024-01-20",
+        "socialLinks": {
+          "twitch": "jameswgaming",
+          "instagram": "@jwilsonphoto"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Aisha Patel",
+        "hobby": "Cooking",
+        "followers": 3200,
+        "avatar": "database/images/musician.jpg",
+        "description": "Fusion cuisine explorer 👩‍🍳",
+        "location": "Mumbai, India",
+        "joinedDate": "2024-02-10",
+        "socialLinks": {
+          "instagram": "@aishacooks",
+          "youtube": "AishasFusionKitchen"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Carlos Rodriguez",
+        "hobby": "Music & Sports",
+        "followers": 2100,
+        "avatar": "database/images/musician.jpg",
+        "description": "Guitar player and fitness enthusiast 🎸 💪",
+        "location": "Barcelona, Spain",
+        "joinedDate": "2024-01-25",
+        "socialLinks": {
+          "instagram": "@carlosmusic",
+          "spotify": "carlosrodriguez"
+        }
+      }
+    ]
+  }
+  
