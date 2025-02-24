@@ -3,36 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brutalist Chatbot</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Social Media Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/feed.css">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-brand">BRUTAL_BOT</div>
-        <div class="nav-links">
-            <a href="#" class="nav-item">HOME</a>
-            <a href="#" class="nav-item">ABOUT</a>
-            <a href="#" class="nav-item">DOCS</a>
-            <button id="clear-chat" class="nav-item clear-button">CLEAR CHAT</button>
-            <div class="nav-item geometric-block"></div>
+        <div class="nav-brand">
+            <a href="#" class="logo">SocialHub</a>
         </div>
+        <div class="nav-menu">           
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-compass"></i> Explore</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+            </ul>
+            <div class="nav-profile">
+                <img src="profile-placeholder.jpg" alt="Profile" class="profile-img">
+                <button class="nav-toggle">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-theme-toggle">
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div> 
     </nav>
-    <div class="layout">
-        <div id="chatbot-container">
-            <div id="chat-header">
-                <div class="geometric-shape"></div>
-                <h1>CHATBOT_</h1>
-                <div id="status-indicator" class="offline"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="feed-container">
+            <div class="create-post">
+                <div class="user-avatar">
+                    <img src="default-avatar.jpg" alt="User Avatar">
+                </div>
+                <div class="post-input">
+                    <textarea placeholder="What's happening?"></textarea>
+                    <div class="post-actions">
+                        <div class="post-attachments">
+                            <i class="fas fa-image"></i>
+                            <i class="fas fa-video"></i>
+                            <i class="fas fa-poll"></i>
+                        </div>
+                        <button class="post-button">Post</button>
+                    </div>
+                </div>
             </div>
-            <div id="chat-messages"></div>
-            <div id="chat-input">
-                <input type="text" id="user-input" placeholder="TYPE MESSAGE...">
-                <button id="send-button">SEND</button>
+            
+            <div class="feed" id="mainFeed">
+                <!-- Posts will be dynamically inserted here -->
             </div>
         </div>
-    </div>
-    
-    <!-- Botpress Scripts -->
-    <script src="scripts/index.js"></script>
+    </main>
+
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/feed.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #1da1f2;
+    --border-color: #ebeef0;
+    --text-color: #14171a;
+    --secondary-text: #657786;
+    --background: #ffffff;
+    --hover-bg: #f5f8fa;
+    --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --primary-color: #1a91da;
+    --border-color: #38444d;
+    --text-color: #ffffff;
+    --secondary-text: #8899a6;
+    --background: #15202b;
+    --hover-bg: #192734;
+    --card-bg: #192734;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feed-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.post {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-input textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
