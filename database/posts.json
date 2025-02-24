@@ -1,0 +1,125 @@
+{
+    "premadePosts": [
+      {
+        "id": 1,
+        "user": {
+          "name": "Mike Zhang",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Just finished an intense boxing session! Working on that left hook 🥊 Anyone else into combat sports?",
+        "image": "",
+        "timestamp": "2025-02-24T17:30:00",
+        "likes": 45,
+        "comments": 8
+      },
+      {
+        "id": 2,
+        "user": {
+          "name": "Sarah Chen",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "New digital art piece finished! Took 12 hours but worth it 🎨 #DigitalArt #Creativity",
+        "image": "database/images/musician.jpg",
+        "timestamp": "2025-02-24T16:45:00",
+        "likes": 89,
+        "comments": 12
+      },
+      {
+        "id": 3,
+        "user": {
+          "name": "James Wilson",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Captured this amazing sunset in downtown London today 📸 The light was perfect!",
+        "image": "database/images/musician.jpg",
+        "timestamp": "2025-02-24T16:15:00",
+        "likes": 156,
+        "comments": 23
+      },
+      {
+        "id": 4,
+        "user": {
+          "name": "Aisha Patel",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Experimenting with Indo-Italian fusion today! Made this saffron risotto with curry leaves 👩‍🍳",
+        "image": "",
+        "timestamp": "2025-02-24T15:30:00",
+        "likes": 67,
+        "comments": 15
+      },
+      {
+        "id": 5,
+        "user": {
+          "name": "Carlos Rodriguez",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "New track dropping soon! Here's a sneak peek of the studio session 🎸",
+        "image": "database/images/musician.jpg",
+        "timestamp": "2025-02-24T14:45:00",
+        "likes": 92,
+        "comments": 18
+      },
+      {
+        "id": 6,
+        "user": {
+          "name": "Emma Thompson",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "First attempt at pottery! Not perfect but loving the learning process 🏺",
+        "image": "",
+        "timestamp": "2025-02-24T14:00:00",
+        "likes": 43,
+        "comments": 7
+      },
+      {
+        "id": 7,
+        "user": {
+          "name": "Alex Kim",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Built my first mechanical keyboard! The clicking sound is so satisfying 🔧",
+        "image": "",
+        "timestamp": "2025-02-24T13:15:00",
+        "likes": 78,
+        "comments": 14
+      },
+      {
+        "id": 8,
+        "user": {
+          "name": "Maya Singh",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Dance practice day! Preparing for the upcoming showcase 💃",
+        "image": "database/images/musician.jpg",
+        "timestamp": "2025-02-24T12:30:00",
+        "likes": 112,
+        "comments": 19
+      },
+      {
+        "id": 9,
+        "user": {
+          "name": "David Lee",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Just finished this watercolor painting of my garden 🎨",
+        "image": "",
+        "timestamp": "2025-02-24T11:45:00",
+        "likes": 65,
+        "comments": 11
+      },
+      {
+        "id": 10,
+        "user": {
+          "name": "Sophie Martin",
+          "avatar": "database/images/musician.jpg"
+        },
+        "content": "Made my first sourdough bread! The crumb structure came out perfect 🍞",
+        "image": "",
+        "timestamp": "2025-02-24T11:00:00",
+        "likes": 88,
+        "comments": 16
+      }
+    ]
+  }
+  

@@ -1,13 +1,35 @@
 class SocialFeed {
     constructor() {
         this.posts = this.loadPostsFromStorage() || [];
+        this.loadPremadePosts();
         this.initialize();
+    }
+
+    async loadPremadePosts() {
+        try {
+            const response = await fetch('database/posts.json');
+            const data = await response.json();
+            
+            data.premadePosts.forEach(post => {
+                post.timestamp = new Date(post.timestamp);
+            });
+            
+            this.posts = [...this.posts, ...data.premadePosts];
+            this.renderAllPosts();
+        } catch (error) {
+            console.error('Error loading premade posts:', error);
+        }
     }
 
     loadPostsFromStorage() {
         try {
             const savedPosts = localStorage.getItem('hobbyHivePosts');
-            return savedPosts ? JSON.parse(savedPosts) : [];
+            const posts = savedPosts ? JSON.parse(savedPosts) : [];
+            
+            posts.forEach(post => {
+                post.timestamp = new Date(post.timestamp);
+            });
+            return posts;
         } catch (error) {
             console.error('Error loading posts:', error);
             return [];
@@ -19,7 +41,7 @@ class SocialFeed {
             localStorage.setItem('hobbyHivePosts', JSON.stringify(this.posts));
         } catch (error) {
             console.error('Error saving posts:', error);
-            this.cleanupOldPosts(); // Try to free up space
+            this.cleanupOldPosts();
         }
     }
 
@@ -61,24 +83,6 @@ class SocialFeed {
         this.resetPostInput();
     }
 
-    setupPostInteractions(postElement, post) {
-        const likeButton = postElement.querySelector('.like-button');
-        likeButton.addEventListener('click', () => {
-            post.likes++;
-            likeButton.querySelector('span').textContent = post.likes;
-            likeButton.querySelector('i').classList.replace('far', 'fas');
-            this.savePostsToStorage();
-        });
-    }
-
-    cleanupOldPosts() {
-        const maxPosts = 50; // Keep only the latest 50 posts
-        if (this.posts.length > maxPosts) {
-            this.posts = this.posts.slice(0, maxPosts);
-            this.savePostsToStorage();
-        }
-    }
-
     setupImageUpload() {
         const imageIcon = document.querySelector('.fa-image');
         const fileInput = document.createElement('input');
@@ -98,7 +102,6 @@ class SocialFeed {
             const reader = new FileReader();
             reader.onload = (e) => {
                 this.currentImage = e.target.result;
-                // Display a small preview of the image
                 const previewContainer = document.querySelector('.image-preview');
                 if (!previewContainer) {
                     const newPreview = document.createElement('div');
@@ -110,32 +113,8 @@ class SocialFeed {
                 }
             };
             reader.readAsDataURL(file);
-            // Reset the file input value to prevent duplicate selection
             event.target.value = null;
         }
-    }
-    
-
-    createPost() {
-        const content = this.postInput.value.trim();
-        if (!content && !this.currentImage) return;
-
-        const post = {
-            id: Date.now(),
-            content,
-            image: this.currentImage,
-            timestamp: new Date(),
-            likes: 0,
-            comments: [],
-            user: {
-                name: 'Current User',
-                avatar: 'default-avatar.jpg'
-            }
-        };
-
-        this.posts.unshift(post);
-        this.renderPost(post);
-        this.resetPostInput();
     }
 
     renderPost(post) {
@@ -180,27 +159,39 @@ class SocialFeed {
             post.likes++;
             likeButton.querySelector('span').textContent = post.likes;
             likeButton.querySelector('i').classList.replace('far', 'fas');
+            this.savePostsToStorage();
         });
     }
 
     formatTimestamp(timestamp) {
-        const now = new Date();
+        const now = new Date('2025-02-24T21:42:00+04:00');
         const diff = now - timestamp;
-        const seconds = Math.floor(diff / 1000);
-        
-        if (seconds < 60) return 'Just now';
-        if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
-        if (seconds < 86400) return `${Math.floor(seconds / 3600)}h`;
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(minutes / 60);
+
+        if (minutes < 60) return `${minutes}m ago`;
+        if (hours < 24) return `${hours}h ago`;
         return timestamp.toLocaleDateString();
+    }
+
+    cleanupOldPosts() {
+        const maxPosts = 10;
+        if (this.posts.length > maxPosts) {
+            this.posts = this.posts.slice(0, maxPosts);
+            this.savePostsToStorage();
+        }
     }
 
     resetPostInput() {
         this.postInput.value = '';
         this.currentImage = null;
+        const previewContainer = document.querySelector('.image-preview');
+        if (previewContainer) {
+            previewContainer.remove();
+        }
     }
 }
 
-// Initialize the feed
 document.addEventListener('DOMContentLoaded', () => {
     const feed = new SocialFeed();
 });
